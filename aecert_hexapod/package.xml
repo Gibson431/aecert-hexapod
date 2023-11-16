@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>aecert_hexapod</name>
+  <version>0.1.0</version>
+  <description>Metapackage for Aecert Hexapod related packages</description>
+  <maintainer email="timmaxgibson@gmail.com">Tim Gibson</maintainer>
+
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>aecert_hexapod_control</exec_depend>
+  <exec_depend>aecert_hexapod_gazebo</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
