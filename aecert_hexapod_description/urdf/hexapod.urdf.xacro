@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<robot name="hexapod" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find aecert_hexapod_description)/urdf/common_properties.xacro" />
+  <xacro:include filename="$(find aecert_hexapod_description)/urdf/leg.xacro" />
+  
+  <xacro:property name="LEG_X_OFFS" value="0.1" />
+  <xacro:property name="LEG_Y_OFFS" value="0.07" />
+  <xacro:property name="MID_LEG_Y_OFFS" value="0.11" />
+  <xacro:property name="LEG_YAW" value="0.6" />
+
+  <link name="base_footprint"/>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia
+        ixx="4.2111447e-02" ixy="0" ixz="0"
+        iyy="4.2111447e-02" iyz="0"
+        izz="7.5254874e-02"
+      />
+      <mass value="1.3729096" />
+    </inertial>
+
+    <collision name="base_collision">
+      <origin xyz="0 0 0.045" rpy="0 0 0" />
+      <geometry>
+        <box size="0.265 0.265 0.089" />
+      </geometry>
+    </collision>
+
+    <visual name="base_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh scale="0.001 0.001 0.001" filename="$(find aecert_hexapod_description)/meshes/base.stl" />
+      </geometry>
+      <material name="light_black" />
+    </visual>
+
+  </link>
+
+  <joint name="base_joint" type="fixed" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+
+  <xacro:leg name="fl" parent="base_link" x_offs="${LEG_X_OFFS}" y_offs="${LEG_Y_OFFS}" yaw="${LEG_YAW}" />
+  <xacro:leg name="fr" parent="base_link" x_offs="${LEG_X_OFFS}" y_offs="${-LEG_Y_OFFS}" yaw="${-LEG_YAW}" />
+  <xacro:leg name="ml" parent="base_link" x_offs="0" y_offs="${MID_LEG_Y_OFFS}" yaw="${PI/2}" />
+  <xacro:leg name="mr" parent="base_link" x_offs="0" y_offs="${-MID_LEG_Y_OFFS}" yaw="${-PI/2}" />
+  <xacro:leg name="bl" parent="base_link" x_offs="${-LEG_X_OFFS}" y_offs="${LEG_Y_OFFS}" yaw="${PI-LEG_YAW}" />
+  <xacro:leg name="br" parent="base_link" x_offs="${-LEG_X_OFFS}" y_offs="${-LEG_Y_OFFS}" yaw="${-PI+LEG_YAW}" />
+
+  <xacro:include filename="$(find aecert_hexapod_control)/config/xacro_controls/leg_joint_control.xacro" />
+
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <xacro:leg_joint_control name="fl" />
+    <xacro:leg_joint_control name="fr" />
+    <xacro:leg_joint_control name="ml" />
+    <xacro:leg_joint_control name="mr" />
+    <xacro:leg_joint_control name="bl" />
+    <xacro:leg_joint_control name="br" />
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find aecert_hexapod_control)/config/aecert_hexapod_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

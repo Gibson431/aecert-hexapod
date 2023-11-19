@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>aecert_hexapod_sim</name>
+  <version>2.2.3</version>
+  <description>
+    Gazebo simulation package for Aecert's Hexapod
+  </description>
+  <maintainer email="timmaxgibson@gmail.com">Tim Gibson</maintainer>
+  <license>Apache 2.0</license>
+  <author email="timmaxgibson@gmail.com">Tim Gibson</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Edifice -->
+  <exec_depend condition="$IGNITION_VERSION == edifice">ignition-gazebo5</exec_depend>
+  <!-- Citadel (default) -->
+  <exec_depend condition="$IGNITION_VERSION == citadel">ignition-gazebo3</exec_depend>
+  <exec_depend condition="$IGNITION_VERSION == ''">ignition-gazebo3</exec_depend>
+
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
+
+  <exec_depend>image_transport_plugins</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_ign_bridge</exec_depend>
+  <exec_depend>ros_ign_gazebo</exec_depend>
+  <exec_depend>ros_ign_image</exec_depend>
+  <!-- See https://github.com/osrf/ros_ign/issues/40 -->
+  <!--exec_depend>ros_ign_point_cloud</exec_depend-->
+  <exec_depend>rqt_image_view</exec_depend>
+  <exec_depend>rqt_plot</exec_depend>
+  <exec_depend>rqt_topic</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>aecert_hexapod_description</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
+</package>

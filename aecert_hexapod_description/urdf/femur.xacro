@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- <xacro:include filename="$(find aecert_hexapod_description)/urdf/common_properties.xacro" /> -->
+
+  <xacro:macro name="femur_link" params="name">
+  
+    <link name="${name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1.3729096e+00" />
+        <inertia 
+          ixx="4.2111447e-02" ixy="0" ixz="0" 
+          iyy="4.2111447e-02" iyz="0" 
+          izz="7.5254874e-02" 
+        />
+      </inertial>
+
+      <collision name="${name}_collision">
+        <origin xyz="0.06 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.14 0.07 0.04" />
+        </geometry>
+      </collision>
+
+      <visual name="${name}_visual">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh scale="0.001 0.001 0.001" filename="$(find aecert_hexapod_description)/meshes/femur.stl" />
+        </geometry>
+        <material name="light_black" />
+      </visual>
+
+    </link>
+
+    </xacro:macro>
+
+  <xacro:macro name="femur_joint" params="name parent_link child_link">
+    <joint name="${name}" type="revolute">
+      <origin xyz="0.055 0 0.01" rpy="0 0 0" />
+      <parent link="${parent_link}" />
+      <child link="${child_link}" />
+      <axis xyz="0 1 0" rpy="0 0 0" />
+      <limit 
+        lower="-1.79769e+308" 
+        upper="1.79769e+308" 
+        effort="1000" 
+        velocity="1000"
+      />
+    </joint>
+    
+  </xacro:macro>
+
+</robot>

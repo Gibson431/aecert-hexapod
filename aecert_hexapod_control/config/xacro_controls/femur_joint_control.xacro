@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<robot name="xacro_properties" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="femur_joint_control" params="name">
+    <joint name="${name}">
+      <command_interface name="position">
+        <param name="min">{-2*PI}</param>
+        <param name="max">{2*PI}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </xacro:macro>
+</robot>

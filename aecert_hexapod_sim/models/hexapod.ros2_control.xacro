@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<robot name="hexapod" xmlns:xacro="http://ros.org/wiki/xacro">  
+  <xacro:include filename="$(find aecert_hexapod_description)/urdf/hexapod.urdf" />
+
+  <gazebo>
+    <plugin name="ignition::gazebo::systems::JointStatePublisher" filename="ignition-gazebo-joint-state-publisher-system" />
+    <plugin name="ignition::gazebo::systems::JointController" filename="ignition-gazebo-joint-controller-system" />
+  </gazebo>
+
+</robot>

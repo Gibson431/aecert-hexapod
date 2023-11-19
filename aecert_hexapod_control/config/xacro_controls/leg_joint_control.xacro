@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<robot name="xacro_properties" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find aecert_hexapod_control)/config/xacro_controls/coxa_joint_control.xacro" />
+  <xacro:include filename="$(find aecert_hexapod_control)/config/xacro_controls/femur_joint_control.xacro" />
+  <xacro:include filename="$(find aecert_hexapod_control)/config/xacro_controls/tibia_joint_control.xacro" />
+
+  <xacro:macro name="leg_joint_control" params="name">
+    <xacro:coxa_joint_control name="coxa_${name}_joint" />
+    <xacro:femur_joint_control name="femur_${name}_joint" />
+    <xacro:tibia_joint_control name="tibia_${name}_joint" />
+  </xacro:macro>
+</robot>

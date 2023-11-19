@@ -1,0 +1,39 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 10  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - coxa_fl_joint
+      - femur_fl_joint
+      - tibia_fl_joint
+      - coxa_fr_joint
+      - femur_fr_joint
+      - tibia_fr_joint
+      - coxa_ml_joint
+      - femur_ml_joint
+      - tibia_ml_joint
+      - coxa_mr_joint
+      - femur_mr_joint
+      - tibia_mr_joint
+      - coxa_bl_joint
+      - femur_bl_joint
+      - tibia_bl_joint
+      - coxa_br_joint
+      - femur_br_joint
+      - tibia_br_joint
+
+    command_interfaces:
+      - position
+      - velocity
+
+    state_interfaces:
+      - position
+      - velocity

@@ -1,0 +1,399 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="aecert_hexapod">  
+  <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+<!-- https://github.com/ROBOTIS-GIT/turtlebot3_simulations/blob/foxy-devel/turtlebot3_gazebo/models/turtlebot3_waffle/model.sdf -->
+
+    <link name="base_link">
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="base_collision">
+        <pose>0 0 0.045 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.265 0.265 0.089</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="base_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/base.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_fl_link">
+    
+      <pose>0.1 0.07 0.025 0 0 0.6</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fl_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_fr_link">
+
+      <pose>0.1 -0.07 0.025 0 0 -0.6</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fr_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fr_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_ml_link">
+    
+      <pose>0 0.07 0.025 0 0 1.57</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fl_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_mr_link">
+    
+      <pose>0 -0.07 0.025 0 0 -1.57</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fl_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_bl_link">
+    
+      <pose>-0.1 0.07 0.025 0 0 2.62</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fl_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name="coxa_br_link">
+    
+      <pose>-0.1 -0.07 0.025 0 0 -2.62</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="coxa_fl_collision">
+        <pose>0.03 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.085 0.05 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="coxa_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/coxa.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <joint name="coxa_fl_joint" type="revolute">
+      <pose relative_to="coxa_fl_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_fl_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <joint name="coxa_fr_joint" type="revolute">
+      <pose relative_to="coxa_fr_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_fr_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <joint name="coxa_ml_joint" type="revolute">
+      <pose relative_to="coxa_ml_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_ml_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <joint name="coxa_mr_joint" type="revolute">
+      <pose relative_to="coxa_mr_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_mr_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <joint name="coxa_bl_joint" type="revolute">
+      <pose relative_to="coxa_bl_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_bl_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <joint name="coxa_br_joint" type="revolute">
+      <pose relative_to="coxa_br_link">0 0 0 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>coxa_br_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+    <link name="femur_fl_link">
+    
+      <pose relative_to="coxa_fl_link">0.055 0 0.01 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
+        </inertia>
+        <mass>1.3729096e+00</mass>
+      </inertial>
+
+      <collision name="femur_fl_collision">
+        <pose>0.06 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.13 0.07 0.08</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="femur_fl_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aecert_hexapod/meshes/femur.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <joint name="femur_fl_joint" type="revolute">
+      <pose relative_to="femur_fl_link">0 0 0 0 0 0</pose>
+      <parent>coxa_fl_link</parent>
+      <child>femur_fl_link</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower>    <!--negative infinity-->
+          <upper>1.79769e+308</upper>     <!--positive infinity-->
+        </limit> 
+      </axis>
+    </joint>
+
+
+    <plugin name="ignition::gazebo::systems::JointStatePublisher" filename="ignition-gazebo-joint-state-publisher-system">
+    
+    </plugin>    
+
+  </model>
+</sdf>
