@@ -34,7 +34,9 @@ RUN apt-get update -y && apt-get install -y \
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y \
+    wget \
+    x11-apps
 
 # RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list' \
 #     && wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add - \
