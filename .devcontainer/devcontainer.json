@@ -10,5 +10,14 @@
     "mounts": [
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind",
         "source=${localWorkspaceFolder}/.devcontainer/.bash_aliases,target=/home/vscode/.bash_aliases,type=bind"
-    ]
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools"
+            ]
+        }
+    }
 }
