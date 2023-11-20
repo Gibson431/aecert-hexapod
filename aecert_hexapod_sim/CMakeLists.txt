@@ -72,7 +72,7 @@ install(DIRECTORY
   launch 
   models 
   rviz 
-  worlds
+  # worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 

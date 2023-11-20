@@ -11,3 +11,5 @@ cb  () {
     colcon build
     sr
 };
+
+cb

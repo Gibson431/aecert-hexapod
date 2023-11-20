@@ -54,7 +54,7 @@ def generate_launch_description():
             '-name', 'aecert_hexapod',
             '-topic', 'robot_description',
         ],
-        output='screen',
+        output='both',
     )
 
     load_joint_state_broadcaster = ExecuteProcess(
